@@ -1,0 +1,48 @@
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar" [class.active]="active">
+      <ul class="list-unstyled text-center">
+          <img src="{{user.photo}}" class="mx-auto d-block mt-5 mb-2 rounded-circle" alt="{{user.name}}">
+          <h2 class="text-center mb-5 no-hover-effect">{{user.name}}</h2>
+          <li class="active mb-1">
+              <a href="#homeSubmenu">
+                <button mat-flat-button class="no-hover-effect p-3 fs-6 text-start">
+                  <mat-icon>dashboard</mat-icon> DASHBOARD
+                </button>
+              </a>
+          </li>
+          <li class="mb-1">
+              <a href="#">
+                <button mat-flat-button class="no-hover-effect p-3 fs-6 text-start">
+                  <mat-icon>playlist_add_check</mat-icon> TRABAJOS
+                </button>
+              </a>
+          </li>
+          <li class="mb-1">
+              <a href="#">
+                <button mat-flat-button class="no-hover-effect p-3 fs-6 text-start">
+                  <mat-icon>playlist_add</mat-icon> AGREGAR TRABAJO
+                </button>
+              </a>
+          </li>
+      </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+              <button (click)="active = !active" type="button" id="sidebarCollapse" class="btn btn-info">
+                  <mat-icon *ngIf="!active">navigate_before</mat-icon>
+                  <mat-icon *ngIf="active">navigate_next</mat-icon>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fas fa-align-justify"></i>
+              </button>
+          </div>
+      </nav>
+
+      <p>container</p>
+      </div>
+</div>
