@@ -1,0 +1,53 @@
+<div class="container">
+  <app-spinner [isLoading]="isLoading"></app-spinner>
+  <div *ngIf="!isLoading" class="row justify-content-center">
+    <div class="col-lg-10 col-md-12 col-12 mt-5">
+      <div class="card mt-5 p-5 border-0 shadow-lg border-bottom border-info border-5">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <p *ngIf="!job" class="fs-4 fw-bold text-uppercase text-center mb-5">
+            crear trabajo
+          </p>
+          <p *ngIf="job" class="fs-4 fw-bold text-uppercase text-center mb-5">
+            actualizar trabajo
+          </p>
+          <div class="row mb-3">
+            <div class="col">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Empresa</mat-label>
+                <input formControlName="company" type="text" matInput placeholder="Nombre de la empresa">
+                <mat-error>
+                  La empresa es obligatoria.
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Estado</mat-label>
+                <mat-select formControlName="status">
+                  <mat-option *ngFor="let state of status$ | async" [value]="state.id">
+                    {{state.name}}
+                  </mat-option>
+                </mat-select>
+                <mat-error>
+                  El estado es obligatorio.
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Descripción</mat-label>
+              <input formControlName="description" type="text" matInput>
+              <mat-error>
+                La descripción es obligatoria.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="d-grid gap-2">
+            <button mat-stroked-button color="primary" class="p-3 fw-bold rounded-pill">GUARDAR</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

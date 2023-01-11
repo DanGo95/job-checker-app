@@ -15,9 +15,9 @@ import { ComponentsModule } from './components/components.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ComponentsModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

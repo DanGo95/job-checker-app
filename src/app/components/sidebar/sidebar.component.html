@@ -7,7 +7,7 @@
           <li class="active mb-1">
               <a href="#homeSubmenu">
                 <button mat-flat-button class="no-hover-effect p-3 fs-6 text-start">
-                  <mat-icon>dashboard</mat-icon> DASHBOARD
+                  <mat-icon>show_chart</mat-icon> DASHBOARD
                 </button>
               </a>
           </li>
@@ -18,8 +18,8 @@
                 </button>
               </a>
           </li>
-          <li class="mb-1">
-              <a href="#">
+          <li routerLinkActive="active" class="mb-1">
+              <a routerLink="/job-new">
                 <button mat-flat-button class="no-hover-effect p-3 fs-6 text-start">
                   <mat-icon>playlist_add</mat-icon> AGREGAR TRABAJO
                 </button>
@@ -30,19 +30,13 @@
 
   <!-- Page Content  -->
   <div id="content">
-
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
-              <button (click)="active = !active" type="button" id="sidebarCollapse" class="btn btn-info">
-                  <mat-icon *ngIf="!active">navigate_before</mat-icon>
-                  <mat-icon *ngIf="active">navigate_next</mat-icon>
-              </button>
-              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fas fa-align-justify"></i>
+              <button (click)="active = !active" type="button" id="sidebarCollapse" class="btn btn-info text-white">
+                <mat-icon>view_headline</mat-icon>
               </button>
           </div>
       </nav>
-
-      <p>container</p>
-      </div>
+      <!-- router -->
+      <router-outlet></router-outlet>
 </div>
