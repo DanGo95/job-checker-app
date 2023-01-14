@@ -4,6 +4,7 @@ import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { JobFormComponent } from './components/job-form/job-form.component';
 import { ShellComponent } from './components/shell/shell.component';
+import { JobCardComponent } from './components/job-card/job-card.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path: 'sidebar', component: SidebarComponent },
       { path: 'job-new', component: JobFormComponent },
       { path: 'job-new/:id', component: JobFormComponent },
+      { path: 'jobs', component: JobCardComponent }
     ]
   },
   { path: 'login', component: AuthFormComponent },

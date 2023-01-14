@@ -17,6 +17,7 @@ import { JobFormComponent } from './job-form/job-form.component';
 import { MatSelectModule } from '@angular/material/select';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { ShellComponent } from './shell/shell.component';
+import { JobCardComponent } from './job-card/job-card.component';
 
 
 
@@ -26,7 +27,8 @@ import { ShellComponent } from './shell/shell.component';
     SidebarComponent,
     JobFormComponent,
     SpinnerComponent,
-    ShellComponent
+    ShellComponent,
+    JobCardComponent
   ],
   imports: [
     CommonModule,
