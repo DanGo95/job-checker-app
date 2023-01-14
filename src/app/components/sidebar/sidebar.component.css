@@ -19,14 +19,6 @@ p {
     color: #999;
 }
 
-a,
-a:hover,
-a:focus {
-    color: black;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
 .navbar {
     padding: 15px 10px;
     background: #fff;
