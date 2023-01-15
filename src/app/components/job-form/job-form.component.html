@@ -23,7 +23,7 @@
             <div class="col">
               <mat-form-field appearance="outline" class="w-100">
                 <mat-label>Estado</mat-label>
-                <mat-select formControlName="status">
+                <mat-select formControlName="status_id">
                   <mat-option *ngFor="let state of status$ | async" [value]="state.id">
                     {{state.name}}
                   </mat-option>

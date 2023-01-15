@@ -1,14 +1,14 @@
 <div class="container">
   <div class="col-12">
-    <div class="card mt-5 pt-5 px-5 pb-3 border-0 shadow-lg border-bottom border-info border-5">
-      <h1 class="roboto-condensed"><b>Puesto al que se postula</b></h1>
-      <h2 class="roboto-condensed text-muted">Compañia</h2>
+    <div *ngFor="let job of jobs" class="card mt-5 pt-5 px-5 pb-3 border-0 shadow-lg border-bottom border-info border-5">
+      <h1 class="roboto-condensed"><b>{{job.description}}</b></h1>
+      <h2 class="roboto-condensed text-muted">{{job.company}}</h2>
       <hr>
       <div class="d-flex justify-content-between">
-        <p class="roboto-condensed">
-          <i class="far fa-calendar"></i> fecha
+        <p class="roboto-condensed fs-6">
+          <i class="far fa-calendar"></i> {{job.date.toDate() | date}}
         </p>
-        <p>status</p>
+        <p class="fs-6 roboto-condensed">{{job.status}}</p>
       </div>
       <div class="d-flex justify-content-start mt-3">
         <button class="btn btn-info text-white me-3">

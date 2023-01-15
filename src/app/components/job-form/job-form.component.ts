@@ -16,6 +16,7 @@ export class JobFormComponent implements OnInit {
 
   form!: FormGroup;
   status$: Observable<Status[]>;
+  status!: Status[];
   job!: Job;
   id!: string;
   isLoading = false;
@@ -27,6 +28,7 @@ export class JobFormComponent implements OnInit {
     private router:
     Router ) {
     this.status$ = this.jobsService.getStatus();
+    this.status$.subscribe(status => this.status = status);
   }
 
   ngOnInit(): void {
@@ -61,8 +63,9 @@ export class JobFormComponent implements OnInit {
     this.form = this.fb.group({
       company: ['', [Validators.required]],
       description: ['', [Validators.required]],
-      status: ['', Validators.required],
-      date: [new Date()]
+      status_id: ['', Validators.required],
+      date: [new Date()],
+      status: [],
     })
   }
 
@@ -77,6 +80,9 @@ export class JobFormComponent implements OnInit {
       text: 'Espere por favor...'
     });
     Swal.showLoading(Swal.getConfirmButton());
+
+    const state = this.status.filter(state => state.id == this.form.value.status_id);
+    this.form.controls['status'].setValue(state[0].name);
 
     if (!this.job) {
       this.jobsService.createJob(this.form.value).subscribe( () => this.swalSuccess('/'));
