@@ -25,8 +25,7 @@ export class JobFormComponent implements OnInit {
     private fb: FormBuilder,
     private jobsService: JobService,
     private route: ActivatedRoute,
-    private router:
-    Router ) {
+    private router: Router ) {
     this.status$ = this.jobsService.getStatus();
     this.status$.subscribe(status => this.status = status);
   }
@@ -45,11 +44,12 @@ export class JobFormComponent implements OnInit {
         this.jobsService.getJob(id).subscribe( job => {
           if (job) {
             this.job = job;
-            const { company, description, status } = this.job;
+            const { company, description, status, status_id } = this.job;
             this.form.setValue({
               company,
               description,
               status,
+              status_id,
               date: this.job.date.toDate()
             })
           }
