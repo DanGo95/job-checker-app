@@ -85,11 +85,11 @@ export class JobFormComponent implements OnInit {
     this.form.controls['status'].setValue(state[0].name);
 
     if (!this.job) {
-      this.jobsService.createJob(this.form.value).subscribe( () => this.swalSuccess('/'));
+      this.jobsService.createJob(this.form.value).subscribe( () => this.swalSuccess('/jobs'));
       return;
     }
 
-    this.jobsService.updateJob(this.id, this.form.value).subscribe( () => this.swalSuccess('/'));
+    this.jobsService.updateJob(this.id, this.form.value).subscribe( () => this.swalSuccess('/jobs'));
   }
 
   private swalSuccess(url: string) {
