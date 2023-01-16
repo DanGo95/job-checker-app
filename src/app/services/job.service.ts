@@ -14,7 +14,7 @@ export class JobService {
 
   constructor( private afs: AngularFirestore ) {
     this.statusCollection = this.afs.collection('status');
-    this.jobsCollection = this.afs.collection('jobs');
+    this.jobsCollection = this.afs.collection('jobs', ref => ref.orderBy('date', 'desc'));
   }
 
   getStatus() {
